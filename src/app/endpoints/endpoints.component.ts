@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Endpoint } from '../models/endpoint';
+import { EndpointService } from '../services/endpoint.service';
 
 @Component({
   selector: 'app-endpoints',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndpointsComponent implements OnInit {
 
-  constructor() { }
+  endpoints: Endpoint[] = [];
+
+  constructor(private endpointService: EndpointService) { 
+    this.endpointService.getAllEndpoints().subscribe(endpoints=>{
+      console.log(endpoints);
+    });
+  }
 
   ngOnInit(): void {
   }
