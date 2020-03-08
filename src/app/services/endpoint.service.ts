@@ -11,7 +11,11 @@ export class EndpointService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllEndpoints(): Observable<Endpoint> {
-    return this.httpClient.get<Endpoint>(ApiService.apiURL + '/endpoints')
+  getAllEndpoints(): Observable<Endpoint[]> {
+    return this.httpClient.get<Endpoint[]>(ApiService.apiURL + '/endpoints')
+  }
+
+  addEndpoint(data){
+    return this.httpClient.post<Endpoint>(ApiService.apiURL + '/endpoints', JSON.stringify(data), ApiService.httpOptions);
   }
 }

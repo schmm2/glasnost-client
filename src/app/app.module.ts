@@ -10,6 +10,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
 import { EndpointsComponent } from './endpoints/endpoints.component';
+import { AddEndpointComponent } from './add-endpoint/add-endpoint.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,15 @@ import { EndpointsComponent } from './endpoints/endpoints.component';
     LayoutComponent,
     HomeComponent,
     EndpointsComponent,
+    AddEndpointComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

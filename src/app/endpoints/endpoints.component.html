@@ -1,1 +1,8 @@
-<p>endpoints works!</p>
+<h1>Endpoints</h1>
+<mat-list>
+    <mat-list-item *ngFor="let endpoint of endpoints"> {{ endpoint.title }} </mat-list-item>
+</mat-list>
+
+<div>
+    <button (click)="add()">Add</button>
+</div>
